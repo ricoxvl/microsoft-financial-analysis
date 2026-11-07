@@ -1,0 +1,49 @@
+check,passed,detail
+FY2019 historical balance,True,Residual 0.000000 USDm
+FY2019 reported cash flow,True,Residual 0.000000 USDm
+FY2020 historical balance,True,Residual 0.000000 USDm
+FY2020 reported cash flow,True,Residual 0.000000 USDm
+FY2021 historical balance,True,Residual 0.000000 USDm
+FY2021 reported cash flow,True,Residual 0.000000 USDm
+FY2022 historical balance,True,Residual 0.000000 USDm
+FY2022 reported cash flow,True,Residual 0.000000 USDm
+FY2023 historical balance,True,Residual 0.000000 USDm
+FY2023 reported cash flow,True,Residual 0.000000 USDm
+FY2024 historical balance,True,Residual 0.000000 USDm
+FY2024 reported cash flow,True,Residual 0.000000 USDm
+FY2025 historical balance,True,Residual 0.000000 USDm
+FY2025 reported cash flow,True,Residual 0.000000 USDm
+FY2026 historical balance,True,Residual 0.000000 USDm
+FY2026 reported cash flow,True,Residual 0.000000 USDm
+base FY2027 balance,True,Residual 0.000000 USDm
+base FY2027 cash flow,True,Residual 0.000000 USDm
+base FY2027 cash floor,True,Explicit borrowing rule; interest on opening financing only
+base FY2028 balance,True,Residual -0.000000 USDm
+base FY2028 cash flow,True,Residual 0.000000 USDm
+base FY2028 cash floor,True,Explicit borrowing rule; interest on opening financing only
+base FY2029 balance,True,Residual 0.000000 USDm
+base FY2029 cash flow,True,Residual 0.000000 USDm
+base FY2029 cash floor,True,Explicit borrowing rule; interest on opening financing only
+upside FY2027 balance,True,Residual 0.000000 USDm
+upside FY2027 cash flow,True,Residual 0.000000 USDm
+upside FY2027 cash floor,True,Explicit borrowing rule; interest on opening financing only
+upside FY2028 balance,True,Residual 0.000000 USDm
+upside FY2028 cash flow,True,Residual 0.000000 USDm
+upside FY2028 cash floor,True,Explicit borrowing rule; interest on opening financing only
+upside FY2029 balance,True,Residual 0.000000 USDm
+upside FY2029 cash flow,True,Residual 0.000000 USDm
+upside FY2029 cash floor,True,Explicit borrowing rule; interest on opening financing only
+downside FY2027 balance,True,Residual 0.000000 USDm
+downside FY2027 cash flow,True,Residual 0.000000 USDm
+downside FY2027 cash floor,True,Explicit borrowing rule; interest on opening financing only
+downside FY2028 balance,True,Residual -0.000000 USDm
+downside FY2028 cash flow,True,Residual 0.000000 USDm
+downside FY2028 cash floor,True,Explicit borrowing rule; interest on opening financing only
+downside FY2029 balance,True,Residual 0.000000 USDm
+downside FY2029 cash flow,True,Residual -0.000000 USDm
+downside FY2029 cash floor,True,Explicit borrowing rule; interest on opening financing only
+Backtest filing-date leakage,True,"Original annual filings only; FY2023–26 held out, four origins"
+Scenario FCF ordering,True,Joint scenario shocks propagate through all statements
+Forecast PP&E rollforward,True,Cash capex plus noncash finance lease additions less depreciation
+Noncash SBC equity linkage,True,Retained earnings and paid-in capital modeled in aggregate equity
+Unique source facts,True,One original-filing USD fact per year / modeled field

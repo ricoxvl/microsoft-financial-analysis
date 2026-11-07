@@ -1,0 +1,33 @@
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import assert from 'node:assert/strict';
+import {parseHTML} from 'linkedom';
+const root=process.argv[2] || fileURLToPath(new URL('../dashboards/web',import.meta.url));
+const {window}=parseHTML(fs.readFileSync(root+'/index.html','utf8'));
+globalThis.window=window;globalThis.document=window.document;globalThis.location={hash:'#snapshot'};
+window.scrollTo=()=>{};window.HTMLElement.prototype.focus=function(){};
+document.querySelector('dialog').showModal=function(){this.open=true};document.querySelector('dialog').close=function(){this.open=false};
+globalThis.fetch=async()=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'/data/model.json','utf8'))});
+await import(root+'/app.js');await new Promise(resolve=>setTimeout(resolve,10));
+assert.match(document.querySelector('h1').textContent,/Financial overview/);
+assert.equal(document.querySelectorAll('.kpi').length,4);
+assert.match(document.querySelector('#app').textContent,/331.8/);
+const counts=[];
+for(const route of ['drivers','scenarios','accuracy','statements','sources','snapshot']){
+ location.hash='#'+route;window.dispatchEvent(new window.Event('hashchange'));
+ assert.ok(document.querySelector('h1'),route+' header');
+ assert.ok(document.querySelector('#app').textContent.length>900,route+' content');
+ assert.equal(document.querySelectorAll('nav a.active').length,1,route+' navigation');
+ counts.push(route+': '+document.querySelectorAll('table').length+' tables');
+}
+location.hash='#scenarios';window.dispatchEvent(new window.Event('hashchange'));
+let slider=document.querySelector('#driver-growth');slider.value='.1';slider.dispatchEvent(new window.Event('input'));slider.dispatchEvent(new window.Event('change'));
+assert.match(document.querySelector('#app').textContent,/Custom case/);
+assert.match(document.querySelector('#app').textContent,/365.0/);
+document.querySelector('#reset-case').click();assert.doesNotMatch(document.querySelector('#app').textContent,/Custom adjustments are active/);
+document.querySelector('[data-case="downside"]').click();assert.equal(document.querySelector('#driver-growth').value,String(JSON.parse(fs.readFileSync(root+'/data/model.json')).drivers.growth-.05));
+const select=document.querySelector('#heat-select');Object.defineProperty(select,'value',{value:'working_capital_capex',configurable:true});select.dispatchEvent(new window.Event('change'));assert.match(document.querySelector('.heatmap').textContent,/DSO/);
+document.querySelector('.show-assumptions').click();assert.equal(document.querySelectorAll('.assumption-item').length,18);
+location.hash='#statements';window.dispatchEvent(new window.Event('hashchange'));document.querySelector('[data-statement="balance"]').click();assert.match(document.querySelector('.simple-table').textContent,/Total assets/);
+console.log('PASS: six routes, scenario selection, custom slider, reset, sensitivity selection, assumptions dialog and statement tabs.');
+console.log(counts.join('\n'));

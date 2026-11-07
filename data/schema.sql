@@ -1,0 +1,2 @@
+CREATE TABLE source_facts (year INTEGER,field TEXT,value REAL,unit TEXT,namespace TEXT,tag TEXT,form TEXT,accession TEXT,start TEXT,end TEXT,filed TEXT,source_url TEXT,api_url TEXT,retrieved TEXT,PRIMARY KEY(year,field));
+CREATE VIEW annual_kpis AS SELECT year, MAX(CASE WHEN field="revenue" THEN value END) revenue, MAX(CASE WHEN field="ebit" THEN value END) ebit, MAX(CASE WHEN field="cfo" THEN value END)-MAX(CASE WHEN field="capex" THEN value END) fcf FROM source_facts GROUP BY year;

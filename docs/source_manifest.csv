@@ -1,0 +1,9 @@
+year,form,accession,filed,start,end,source_url,api_url,retrieved
+2019,10-K,0001564590-19-027952,2019-08-01,2018-07-01,2019-06-30,https://www.sec.gov/Archives/edgar/data/789019/000156459019027952/0001564590-19-027952-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2020,10-K,0001564590-20-034944,2020-07-30,2019-07-01,2020-06-30,https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2021,10-K,0001564590-21-039151,2021-07-29,2020-07-01,2021-06-30,https://www.sec.gov/Archives/edgar/data/789019/000156459021039151/0001564590-21-039151-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2022,10-K,0001564590-22-026876,2022-07-28,2021-07-01,2022-06-30,https://www.sec.gov/Archives/edgar/data/789019/000156459022026876/0001564590-22-026876-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2023,10-K,0000950170-23-035122,2023-07-27,2022-07-01,2023-06-30,https://www.sec.gov/Archives/edgar/data/789019/000095017023035122/0000950170-23-035122-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2024,10-K,0000950170-24-087843,2024-07-30,2023-07-01,2024-06-30,https://www.sec.gov/Archives/edgar/data/789019/000095017024087843/0000950170-24-087843-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2025,10-K,0000950170-25-100235,2025-07-30,2024-07-01,2025-06-30,https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/0000950170-25-100235-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07
+2026,10-K,0001193125-26-323660,2026-07-29,2025-07-01,2026-06-30,https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/0001193125-26-323660-index.html,https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json,2026-11-07

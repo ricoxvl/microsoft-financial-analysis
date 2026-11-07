@@ -1,0 +1,7 @@
+PASS: six routes, scenario selection, custom slider, reset, sensitivity selection, assumptions dialog and statement tabs.
+drivers: 1 tables
+scenarios: 1 tables
+accuracy: 1 tables
+statements: 1 tables
+sources: 1 tables
+snapshot: 1 tables

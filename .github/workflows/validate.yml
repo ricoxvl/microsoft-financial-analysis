@@ -1,0 +1,38 @@
+name: Validate financial model
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  accounting-and-reproducibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned Python dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Reconcile original SEC filings
+        run: python src/reconcile.py
+      - name: Rebuild financial evidence and workbook
+        run: python src/build.py
+      - name: Validate accounting, origin dates and Excel formulas
+        run: python -m unittest discover -s tests -v
+      - name: Validate dashboard syntax and numerical parity
+        run: |
+          node --check dashboards/web/app.js
+          node --check dashboards/web/model.js
+          node tests/test_dashboard.mjs
+      - name: Rebuild executive reports
+        run: python src/reports.py

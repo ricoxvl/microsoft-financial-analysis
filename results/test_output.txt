@@ -1,0 +1,11 @@
+test_all_workbook_formulas_against_independent_evaluation (test_model.ModelTests.test_all_workbook_formulas_against_independent_evaluation) ... ok
+test_cash_economics (test_model.ModelTests.test_cash_economics) ... ok
+test_five_original_annual_periods_and_units (test_model.ModelTests.test_five_original_annual_periods_and_units) ... ok
+test_origin_fact_availability (test_model.ModelTests.test_origin_fact_availability) ... ok
+test_reported_reconciliation (test_model.ModelTests.test_reported_reconciliation) ... ok
+test_stress_funding_without_accounting_plug (test_model.ModelTests.test_stress_funding_without_accounting_plug) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.160s
+
+OK
